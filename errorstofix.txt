@@ -1,0 +1,386 @@
+        TestVector::test_assignMove_empty()
+                line:1565 condition:v.data == nullptr
+                line:1565 condition:v.numCapacity == 0
+                line:1565 condition:v.numElements == 0
+                line:1566 condition:v.data == nullptr
+                line:1566 condition:v.numCapacity == 0
+                line:1566 condition:v.numElements == 0
+        TestVector::test_assignMove_leftBigger() 
+                line:1681 condition:Spy::numDestructor() == 4
+                line:1682 condition:Spy::numDelete() == 4
+                line:1694 condition:vDest.numCapacity == 2
+                line:1695 condition:vDest.numElements == 2
+                line:1699 condition:vDest.data[0] == Spy(99)
+                line:1700 condition:vDest.data[1] == Spy(99)
+                line:1702 condition:v.data == nullptr
+                line:1702 condition:v.numCapacity == 0
+                line:1702 condition:v.numElements == 0
+        TestVector::test_assignMove_rightBigger()
+                line:1637 condition:Spy::numDestructor() == 2
+                line:1638 condition:Spy::numDelete() == 2
+                line:1646 condition:v.data == nullptr
+                line:1646 condition:v.numCapacity == 0
+                line:1646 condition:v.numElements == 0
+                line:1651 condition:v.numCapacity == 4
+                line:1651 condition:v.numElements == 4
+        TestVector::test_assignMove_sameSize()
+                line:1593 condition:Spy::numDestructor() == 4
+                line:1594 condition:Spy::numDelete() == 4
+                line:1602 condition:v.data == nullptr
+                line:1602 condition:v.numCapacity == 0
+                line:1602 condition:v.numElements == 0
+                line:1607 condition:v.data[0] == Spy(26)
+                line:1607 condition:v.data[1] == Spy(49)
+                line:1607 condition:v.data[2] == Spy(67)
+                line:1607 condition:v.data[3] == Spy(89)
+        TestVector::test_assign_empty()
+                line:1385 condition:v.data == nullptr
+                line:1385 condition:v.numCapacity == 0
+                line:1385 condition:v.numElements == 0
+                line:1386 condition:v.data == nullptr
+                line:1386 condition:v.numCapacity == 0
+                line:1386 condition:v.numElements == 0
+        TestVector::test_assign_leftBigger()
+                line:1509 condition:Spy::numAssign() == 2
+                line:1510 condition:Spy::numDestructor() == 2
+                line:1511 condition:Spy::numDelete() == 2
+                line:1535 condition:vDest.numElements == 2
+                line:1539 condition:vDest.data[0] == Spy(99)
+                line:1540 condition:vDest.data[1] == Spy(99)
+        TestVector::test_assign_rightBigger()
+                line:1461 condition:Spy::numCopy() == 4
+                line:1462 condition:Spy::numAlloc() == 4
+                line:1463 condition:Spy::numDestructor() == 2
+                line:1464 condition:Spy::numDelete() == 2
+                line:1479 condition:v.numCapacity == 4
+                line:1479 condition:v.numElements == 4
+        TestVector::test_assign_sameSize()
+                line:1413 condition:Spy::numAssign() == 4
+                line:1431 condition:v.data[0] == Spy(26)
+                line:1431 condition:v.data[1] == Spy(49)
+                line:1431 condition:v.data[2] == Spy(67)
+                line:1431 condition:v.data[3] == Spy(89)
+        TestVector::test_back_read()
+                line:1862 condition:Spy::numDelete() == 0
+                line:1863 condition:Spy::numDefault() == 0
+                line:1869 condition:value == Spy(89)
+                line:1870 condition:v.numCapacity == 4
+                line:1870 condition:v.numElements == 4
+                line:1870 condition:v.data[0] == Spy(26)
+                line:1870 condition:v.data[1] == Spy(49)
+                line:1870 condition:v.data[2] == Spy(67)
+                line:1870 condition:v.data[3] == Spy(89)
+        TestVector::test_back_write()
+                line:1888 condition:Spy::numAlloc() == 0
+                line:1890 condition:Spy::numDefault() == 0
+                line:1903 condition:v.data[3] == Spy(99)
+        TestVector::test_capacity_empty()
+                line:1145 condition:0 == capacity
+                line:1146 condition:v.data == nullptr
+                line:1146 condition:v.numCapacity == 0
+                line:1146 condition:v.numElements == 0
+        TestVector::test_clear_empty()
+                line:2035 condition:v.data == nullptr
+                line:2035 condition:v.numCapacity == 0
+                line:2035 condition:v.numElements == 0
+        TestVector::test_clear_full()
+                line:2051 condition:Spy::numDestructor() == 4
+                line:2052 condition:Spy::numDelete() == 4
+                line:2065 condition:v.numElements == 0
+        TestVector::test_clear_partiallyFilled()
+                line:2088 condition:Spy::numDestructor() == 2
+                line:2089 condition:Spy::numDelete() == 2
+                line:2102 condition:v.numElements == 0
+        TestVector::test_constructCopy_empty()
+                line:302 condition:Spy::numDefault() == 0
+                line:309 condition:v.data == nullptr
+                line:309 condition:v.numCapacity == 0
+                line:309 condition:v.numElements == 0
+                line:310 condition:v.data == nullptr
+                line:310 condition:v.numCapacity == 0
+                line:310 condition:v.numElements == 0
+        TestVector::test_constructCopy_partiallyFilled()
+                line:368 condition:Spy::numCopy() == 2
+                line:369 condition:Spy::numAlloc() == 2
+                line:371 condition:Spy::numDefault() == 0
+                line:393 condition:vDest.data[0] == Spy(26)
+                line:394 condition:vDest.data[1] == Spy(49)
+                line:396 condition:vDest.numElements == 2
+                line:397 condition:vDest.numCapacity == 2
+        TestVector::test_constructCopy_standard()
+                line:326 condition:Spy::numCopy() == 4
+                line:327 condition:Spy::numAlloc() == 4
+                line:329 condition:Spy::numDefault() == 0
+                line:345 condition:v.numCapacity == 4
+                line:345 condition:v.numElements == 4
+                line:345 condition:v.data[0] == Spy(26)
+                line:345 condition:v.data[1] == Spy(49)
+                line:345 condition:v.data[2] == Spy(67)
+                line:345 condition:v.data[3] == Spy(89)
+        TestVector::test_constructInit_empty()
+                line:520 condition:Spy::numDefault() == 0
+                line:527 condition:v.data == nullptr
+                line:527 condition:v.numCapacity == 0
+                line:527 condition:v.numElements == 0
+        TestVector::test_constructInit_standard()
+                line:538 condition:Spy::numCopy() == 4
+                line:539 condition:Spy::numAlloc() == 4
+                line:542 condition:Spy::numDefault() == 0
+                line:551 condition:v.numCapacity == 4
+                line:551 condition:v.numElements == 4
+                line:551 condition:v.data[0] == Spy(26)
+                line:551 condition:v.data[1] == Spy(49)
+                line:551 condition:v.data[2] == Spy(67)
+                line:551 condition:v.data[3] == Spy(89)
+        TestVector::test_constructMove_empty()
+                line:417 condition:Spy::numDefault() == 0
+                line:424 condition:v.data == nullptr
+                line:424 condition:v.numCapacity == 0
+                line:424 condition:v.numElements == 0
+                line:425 condition:v.data == nullptr
+                line:425 condition:v.numCapacity == 0
+                line:425 condition:v.numElements == 0
+        TestVector::test_constructMove_partiallyFilled()
+                line:482 condition:Spy::numDefault() == 0
+                line:489 condition:v.data == nullptr
+                line:489 condition:v.numCapacity == 0
+                line:489 condition:v.numElements == 0
+                line:497 condition:vDest.data[0] == Spy(26)
+                line:498 condition:vDest.data[1] == Spy(49)
+                line:500 condition:vDest.numElements == 2
+                line:501 condition:vDest.numCapacity == 4
+        TestVector::test_constructMove_standard()
+                line:444 condition:Spy::numDefault() == 0
+                line:451 condition:v.data == nullptr
+                line:451 condition:v.numCapacity == 0
+                line:451 condition:v.numElements == 0
+                line:456 condition:v.numCapacity == 4
+                line:456 condition:v.numElements == 4
+                line:456 condition:v.data[0] == Spy(26)
+                line:456 condition:v.data[1] == Spy(49)
+                line:456 condition:v.data[2] == Spy(67)
+                line:456 condition:v.data[3] == Spy(89)
+                line:457 condition:p == vDest.data
+        TestVector::test_construct_default()
+                line:134 condition:Spy::numDefault() == 0
+                line:138 condition:v.data == nullptr
+                line:138 condition:v.numCapacity == 0
+                line:138 condition:v.numElements == 0
+        TestVector::test_construct_sizeFour()
+                line:164 condition:Spy::numDefault() == 4
+                line:183 condition:v.numElements == 4
+                line:184 condition:v.numCapacity == 4
+        TestVector::test_construct_sizeFourFill()
+                line:197 condition:Spy::numCopy() == 4
+                line:198 condition:Spy::numAlloc() == 4
+                line:200 condition:Spy::numDefault() == 0
+                line:212 condition:v.data[0] == Spy(99)
+                line:213 condition:v.data[1] == Spy(99)
+                line:214 condition:v.data[2] == Spy(99)
+                line:215 condition:v.data[3] == Spy(99)
+                line:217 condition:v.numElements == 4
+                line:218 condition:v.numCapacity == 4
+        TestVector::test_construct_sizeZero()
+                line:150 condition:Spy::numDefault() == 0
+                line:154 condition:v.data == nullptr
+                line:154 condition:v.numCapacity == 0
+                line:154 condition:v.numElements == 0
+        TestVector::test_destructor_partiallyFilled()
+                line:281 condition:Spy::numDestructor() == 2
+                line:282 condition:Spy::numDelete() == 2
+        TestVector::test_destructor_standard()
+                line:258 condition:Spy::numDestructor() == 4
+                line:259 condition:Spy::numDelete() == 4
+        TestVector::test_empty_empty()
+                line:1116 condition:true == empty
+                line:1117 condition:v.data == nullptr
+                line:1117 condition:v.numCapacity == 0
+                line:1117 condition:v.numElements == 0
+        TestVector::test_front_read()
+                line:1794 condition:Spy::numDelete() == 0
+                line:1795 condition:Spy::numDefault() == 0
+                line:1801 condition:value == Spy(26)
+                line:1802 condition:v.numCapacity == 4
+                line:1802 condition:v.numElements == 4
+                line:1802 condition:v.data[0] == Spy(26)
+                line:1802 condition:v.data[1] == Spy(49)
+                line:1802 condition:v.data[2] == Spy(67)
+                line:1802 condition:v.data[3] == Spy(89)
+        TestVector::test_front_write()
+                line:1822 condition:Spy::numAlloc() == 0
+                line:1824 condition:Spy::numDefault() == 0
+                line:1837 condition:v.data[0] == Spy(99)
+        TestVector::test_iterator_beginEmpty()
+                line:2355 condition:v.data == nullptr
+                line:2355 condition:v.numCapacity == 0
+                line:2355 condition:v.numElements == 0
+        TestVector::test_iterator_beginFull()
+                line:2376 condition:it.p != nullptr
+        TestVector::test_iterator_dereferenceReadFull()
+                line:2451 condition:value == Spy(49)
+        TestVector::test_iterator_dereferenceUpdate()
+                line:2482 condition:v.data[1] == Spy(99)
+        TestVector::test_iterator_endFull()
+                line:2404 condition:it.p == &(v.data[4])
+        TestVector::test_iterator_incrementFull()
+                line:2430 condition:*(it.p) == Spy(67)
+        TestVector::test_popback_empty()
+                line:1932 condition:v.data == nullptr
+                line:1932 condition:v.numCapacity == 0
+                line:1932 condition:v.numElements == 0
+        TestVector::test_popback_full()
+                line:1948 condition:Spy::numDestructor() == 1
+                line:1949 condition:Spy::numDelete() == 1
+                line:1962 condition:v.numElements == 3
+        TestVector::test_popback_partiallyFilled()
+                line:1991 condition:Spy::numDestructor() == 1
+                line:1992 condition:Spy::numDelete() == 1
+                line:2005 condition:v.numElements == 1
+        TestVector::test_pushback_empty()
+                line:2122 condition:Spy::numCopy() == 1
+                line:2123 condition:Spy::numAlloc() == 1
+                line:2137 condition:v.data[0] == Spy(99)
+                line:2138 condition:v.numCapacity == 1
+                line:2139 condition:v.numElements == 1
+        TestVector::test_pushback_excessCapacity()
+                line:2163 condition:Spy::numCopy() == 1
+                line:2164 condition:Spy::numAlloc() == 1
+                line:2176 condition:v.numElements == 4
+        TestVector::test_pushback_moveEmpty()
+                line:2236 condition:Spy::numCopyMove() == 1
+                line:2251 condition:v.data[0] == Spy(99)
+                line:2252 condition:v.numCapacity == 1
+                line:2253 condition:v.numElements == 1
+                line:2254 condition:s == Spy()
+        TestVector::test_pushback_moveExcessCapacity()
+                line:2278 condition:Spy::numCopyMove() == 1
+                line:2291 condition:v.numElements == 4
+        TestVector::test_pushback_moveRequireReallocate()
+                line:2315 condition:Spy::numCopyMove() == 4
+                line:2316 condition:Spy::numDestructor() == 3
+                line:2336 condition:v.numCapacity == 6
+                line:2337 condition:v.numElements == 4
+        TestVector::test_pushback_requireReallocate()
+                line:2200 condition:Spy::numCopyMove() == 3
+                line:2201 condition:Spy::numDestructor() == 3
+                line:2202 condition:Spy::numCopy() == 1
+                line:2203 condition:Spy::numAlloc() == 1
+                line:2221 condition:v.numCapacity == 6
+                line:2222 condition:v.numElements == 4
+        TestVector::test_reserve_emptyTen()
+                line:782 condition:v.numCapacity == 10
+                line:783 condition:v.numElements == 0
+        TestVector::test_reserve_emptyZero()
+                line:757 condition:v.numCapacity == 0
+                line:767 condition:v.data == nullptr
+                line:767 condition:v.numCapacity == 0
+                line:767 condition:v.numElements == 0
+        TestVector::test_reserve_fourFour()
+                line:859 condition:v.numCapacity == 4
+        TestVector::test_reserve_fourTen()
+                line:893 condition:v.numCapacity == 10
+        TestVector::test_reserve_fourZero()
+                line:825 condition:v.numCapacity == 4
+        TestVector::test_reserve_standardTen()
+                line:944 condition:v.numCapacity == 10
+                line:945 condition:Spy::numCopyMove() == 4
+                line:946 condition:Spy::numDestructor() == 4
+        TestVector::test_reserve_standardZero()
+                line:925 condition:v.numCapacity == 4
+                line:926 condition:v.numCapacity == 4
+        TestVector::test_resize_emptyFourDefault()
+                line:593 condition:v.numCapacity == 4
+                line:594 condition:v.numElements == 4
+                line:595 condition:Spy::numDefault() == 4
+        TestVector::test_resize_emptyFourValue()
+                line:621 condition:v.numCapacity == 4
+                line:622 condition:v.numElements == 4
+                line:623 condition:Spy::numCopy() == 4
+                line:624 condition:Spy::numAlloc() == 4
+        TestVector::test_resize_emptyZero()
+                line:568 condition:v.numCapacity == 0
+                line:578 condition:v.data == nullptr
+                line:578 condition:v.numCapacity == 0
+                line:578 condition:v.numElements == 0
+        TestVector::test_resize_fourSixDefault()
+                line:681 condition:Spy::numCopyMove() == 4
+                line:682 condition:Spy::numDestructor() == 4
+                line:683 condition:Spy::numDefault() == 2
+                line:694 condition:v.numCapacity == 6
+                line:695 condition:v.numElements == 6
+                line:698 condition:v.data[4] == Spy()
+                line:699 condition:v.data[5] == Spy()
+        TestVector::test_resize_fourSixValue()
+                line:722 condition:Spy::numCopyMove() == 4
+                line:723 condition:Spy::numDestructor() == 4
+                line:724 condition:Spy::numCopy() == 2
+                line:725 condition:Spy::numAlloc() == 2
+                line:735 condition:v.numCapacity == 6
+                line:736 condition:v.numElements == 6
+        TestVector::test_resize_fourZero()
+                line:649 condition:Spy::numDestructor() == 4
+                line:650 condition:Spy::numDelete() == 4
+                line:663 condition:v.numElements == 0
+        TestVector::test_shrink_empty()
+                line:981 condition:v.data == nullptr
+                line:981 condition:v.numCapacity == 0
+                line:981 condition:v.numElements == 0
+        TestVector::test_shrink_toEmpty()
+                line:1008 condition:v.data == nullptr
+                line:1008 condition:v.numCapacity == 0
+        TestVector::test_shrink_twoExtraSlots()
+                line:1062 condition:Spy::numCopy() == 4
+                line:1063 condition:Spy::numAlloc() == 4
+                line:1064 condition:Spy::numDestructor() == 4
+                line:1065 condition:Spy::numDelete() == 4
+                line:1071 condition:v.numCapacity == 4
+        TestVector::test_size_empty()
+                line:1087 condition:0 == size
+                line:1088 condition:v.data == nullptr
+                line:1088 condition:v.numCapacity == 0
+                line:1088 condition:v.numElements == 0
+        TestVector::test_subscript_read()
+                line:1729 condition:Spy::numDelete() == 0
+                line:1730 condition:Spy::numDefault() == 0
+                line:1736 condition:value == Spy(49)
+                line:1737 condition:v.numCapacity == 4
+                line:1737 condition:v.numElements == 4
+                line:1737 condition:v.data[0] == Spy(26)
+                line:1737 condition:v.data[1] == Spy(49)
+                line:1737 condition:v.data[2] == Spy(67)
+                line:1737 condition:v.data[3] == Spy(89)
+        TestVector::test_subscript_write()
+                line:1758 condition:Spy::numAlloc() == 0
+                line:1760 condition:Spy::numDefault() == 0
+                line:1770 condition:v.data[1] == Spy(99)
+        TestVector::test_swap_empty()
+                line:1191 condition:v.data == nullptr
+                line:1191 condition:v.numCapacity == 0
+                line:1191 condition:v.numElements == 0
+                line:1192 condition:v.data == nullptr
+                line:1192 condition:v.numCapacity == 0
+                line:1192 condition:v.numElements == 0
+        TestVector::test_swap_leftBigger()
+                line:1344 condition:v.numCapacity == 4
+                line:1344 condition:v.numElements == 4
+                line:1349 condition:vDest.numCapacity == 2
+                line:1350 condition:vDest.numElements == 2
+                line:1354 condition:vDest.data[0] == Spy(99)
+                line:1355 condition:vDest.data[1] == Spy(99)
+        TestVector::test_swap_rightBigger()
+                line:1289 condition:vSrc.numCapacity == 2
+                line:1290 condition:vSrc.numElements == 2
+                line:1294 condition:vSrc.data[0] == Spy(99)
+                line:1295 condition:vSrc.data[1] == Spy(99)
+                line:1301 condition:v.numCapacity == 4
+                line:1301 condition:v.numElements == 4
+        TestVector::test_swap_sameSize()
+                line:1237 condition:vSrc.data[0] == Spy(99)
+                line:1238 condition:vSrc.data[1] == Spy(99)
+                line:1239 condition:vSrc.data[2] == Spy(99)
+                line:1240 condition:vSrc.data[3] == Spy(99)
+                line:1246 condition:v.data[0] == Spy(26)
+                line:1246 condition:v.data[1] == Spy(49)
+                line:1246 condition:v.data[2] == Spy(67)
+                line:1246 condition:v.data[3] == Spy(89)
+Vector: There were 74 tests run for a success rate of: 6.8%
