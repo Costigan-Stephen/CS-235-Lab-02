@@ -61,8 +61,9 @@ public:
    //
    class iterator;
    iterator begin() 
-   { 
-      return iterator(); 
+   {
+      return iterator();
+     // return new T[0];
    }
    iterator end() 
    { 
