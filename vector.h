@@ -14,7 +14,7 @@
  *        vector                 : A class that represents a Vector
  *        vector::iterator       : An iterator through Vector
  * Author
- *    Stephen Costigan, Alexander Dohms
+ *    Stephen Costigan, Alexander Dohms, Jonathan Colwell
  ************************************************************************/
 
 #pragma once
