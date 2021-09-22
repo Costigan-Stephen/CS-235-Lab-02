@@ -66,7 +66,6 @@ void vector <T, A> :: shrink_to_fit()
 template <typename T, typename A>
 T & vector <T, A> :: operator [] (size_t index)
 
- * VECTOR :: SUBSCRIPT
 template <typename T, typename A>
 const T & vector <T, A> :: operator [] (size_t index) const
 
