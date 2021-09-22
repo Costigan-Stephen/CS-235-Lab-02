@@ -38,5 +38,6 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="errorstofix.txt" />
+    <Text Include="TODOfunctions.txt" />
   </ItemGroup>
 </Project>
