@@ -62,12 +62,12 @@ public:
    class iterator;
    iterator begin() 
    {
-      return iterator();
+      return iterator(&data[0]);
      // return new T[0];
    }
    iterator end() 
    { 
-      return iterator(); 
+      return iterator(&data[numElements-1]);
    }
 
    //
@@ -372,46 +372,53 @@ class vector <T, A> :: iterator
 {
 public:
    // constructors, destructors, and assignment operator
-   iterator()       {}
-   iterator(T * p)      {}
-   iterator(const iterator & rhs) {  }
+   iterator()                       { p = 0; }
+   iterator(T * p)                  { this->p = p; }
+   iterator(const iterator & rhs)   { p = rhs.p; }
    iterator & operator = (const iterator & rhs)
    {
+       this->p = rhs.p;
        return *this;
    }
 
    // equals, not equals operator
-   bool operator != (const iterator & rhs) const { return true;  }
-   bool operator == (const iterator & rhs) const { return true; }
+   bool operator != (const iterator & rhs) const { return (rhs.p != p ? true : false); }
+   bool operator == (const iterator & rhs) const { return (rhs.p == p ? true : false); }
 
    // dereference operator
    T & operator * ()
    {
-       return *(new T);
+       return *p;
    }
 
    // prefix increment
    iterator & operator ++ ()
    {
+       p++;
        return *this;
    }
 
    // postfix increment
    iterator operator ++ (int postfix)
    {
-       return *this;
+       iterator i = p;
+       p--;
+       return i;
    }
 
    // prefix decrement
    iterator & operator -- ()
    {
+       p--;
        return *this;
    }
 
    // postfix decrement
    iterator operator -- (int postfix)
    {
-       return *this;
+       iterator i = p;
+       p++;
+       return i;
    }
 
 #ifdef DEBUG // make this visible to the unit tests
