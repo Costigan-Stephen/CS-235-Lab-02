@@ -147,7 +147,7 @@ vector <T, A> :: vector(size_t num, const T & t, const A & a)
 }
 
 /*****************************************
- * VECTOR :: INITIALIZATION LIST constructors
+ * VECTOR :: INITIALIZATION LIST constructors - Steve
  * Create a vector with an initialization list.
  ****************************************/
 template <typename T, typename A>
@@ -197,7 +197,7 @@ vector <T, A> :: vector (vector && rhs)
 }
 
 /*****************************************
- * VECTOR :: DESTRUCTOR
+ * VECTOR :: DESTRUCTOR - Steve
  * Call the destructor for each element from 0..numElements
  * and then free the memory
  ****************************************/
@@ -275,7 +275,7 @@ const T & vector <T, A> :: operator [] (size_t index) const
 }
 
 /*****************************************
- * VECTOR :: FRONT
+ * VECTOR :: FRONT - Steve
  * Read-Write access
  ****************************************/
 template <typename T, typename A>
@@ -285,7 +285,7 @@ T & vector <T, A> :: front ()
 }
 
 /******************************************
- * VECTOR :: FRONT
+ * VECTOR :: FRONT - Steve
  * Read-Write access
  *****************************************/
 template <typename T, typename A>
@@ -295,7 +295,7 @@ const T & vector <T, A> :: front () const
 }
 
 /*****************************************
- * VECTOR :: FRONT
+ * VECTOR :: FRONT - Steve
  * Read-Write access
  ****************************************/
 template <typename T, typename A>
@@ -305,7 +305,7 @@ T & vector <T, A> :: back()
 }
 
 /******************************************
- * VECTOR :: FRONT
+ * VECTOR :: FRONT - Steve
  * Read-Write access
  *****************************************/
 template <typename T, typename A>
