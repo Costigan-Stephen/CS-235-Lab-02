@@ -402,7 +402,7 @@ public:
    iterator operator ++ (int postfix)
    {
        iterator i = p;
-       p--;
+       p++;
        return i;
    }
 
@@ -417,7 +417,7 @@ public:
    iterator operator -- (int postfix)
    {
        iterator i = p;
-       p++;
+       p--;
        return i;
    }
 
