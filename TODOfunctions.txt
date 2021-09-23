@@ -1,46 +1,43 @@
- * VECTOR :: NON-DEFAULT constructors
+ * VECTOR :: NON-DEFAULT constructors - Corbin
 template <typename T, typename A>
 vector <T, A> :: vector(const A & a)
 
-
-
- * VECTOR :: NON-DEFAULT constructors
 template <typename T, typename A>
 vector <T, A> :: vector(size_t num, const T & t, const A & a) 
 
 
 
- * VECTOR :: INITIALIZATION LIST constructors
+ * VECTOR :: INITIALIZATION LIST constructors - Steve
 template <typename T, typename A>
 vector <T, A> :: vector(const std::initializer_list<T> & l, const A & a) 
 
 
 
- * VECTOR :: NON-DEFAULT constructors
+ * VECTOR :: NON-DEFAULT constructors - Corbin
 template <typename T, typename A>
 vector <T, A> :: vector(size_t num, const A & a) 
 
 
 
- * VECTOR :: COPY CONSTRUCTOR
+ * VECTOR :: COPY CONSTRUCTOR - Corbin
 template <typename T, typename A>
 vector <T, A> :: vector (const vector & rhs) 
 
 
    
- * VECTOR :: MOVE CONSTRUCTOR
+ * VECTOR :: MOVE CONSTRUCTOR - Jon
 template <typename T, typename A>
 vector <T, A> :: vector (vector && rhs) 
 
 
 
- * VECTOR :: DESTRUCTOR
+ * VECTOR :: DESTRUCTOR - Steve
 template <typename T, typename A>
 vector <T, A> :: ~vector()
 
 
 
- * VECTOR :: RESIZE
+ * VECTOR :: RESIZE - Jon
 template <typename T, typename A>
 void vector <T, A> :: resize(size_t newElements)
 
@@ -49,20 +46,20 @@ void vector <T, A> :: resize(size_t newElements, const T & t)
 
 
 
- * VECTOR :: RESERVE
+ * VECTOR :: RESERVE - Jon
 template <typename T, typename A>
 void vector <T, A> :: reserve(size_t newCapacity)
 
 
 
 
- * VECTOR :: SHRINK TO FIT
+ * VECTOR :: SHRINK TO FIT - Alex
 template <typename T, typename A>
 void vector <T, A> :: shrink_to_fit()
 
 
 
- * VECTOR :: SUBSCRIPT
+ * VECTOR :: SUBSCRIPT - Alex
 template <typename T, typename A>
 T & vector <T, A> :: operator [] (size_t index)
 
@@ -71,7 +68,7 @@ const T & vector <T, A> :: operator [] (size_t index) const
 
 
 
- * VECTOR :: FRONT
+ * VECTOR :: FRONT - Steve
 template <typename T, typename A>
 T & vector <T, A> :: front ()
 
@@ -80,7 +77,7 @@ const T & vector <T, A> :: front () const
 
 
 
- * VECTOR :: BACK
+ * VECTOR :: BACK - Steve
 template <typename T, typename A>
 T & vector <T, A> :: back()
 
@@ -89,7 +86,7 @@ const T & vector <T, A> :: back() const
 
 
 
- * VECTOR :: PUSH BACK
+ * VECTOR :: PUSH BACK - Alex
 template <typename T, typename A>
 void vector <T, A> :: push_back (const T & t)
 
@@ -98,7 +95,7 @@ void vector <T, A> ::push_back(T && t)
 
 
 
- * VECTOR :: ASSIGNMENT
+ * VECTOR :: ASSIGNMENT - Alex
 template <typename T, typename A>
 vector <T, A> & vector <T, A> :: operator = (const vector & rhs)
 
