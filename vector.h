@@ -240,7 +240,7 @@ void vector <T, A> :: reserve(size_t newCapacity)
 }
 
 /***************************************
- * VECTOR :: SHRINK TO FIT
+ * VECTOR :: SHRINK TO FIT Alexander
  * Get rid of any extra capacity
  *     INPUT  :
  *     OUTPUT :
@@ -254,7 +254,7 @@ void vector <T, A> :: shrink_to_fit()
 
 
 /*****************************************
- * VECTOR :: SUBSCRIPT
+ * VECTOR :: SUBSCRIPT Alexander
  * Read-Write access
  ****************************************/
 template <typename T, typename A>
@@ -315,7 +315,7 @@ const T & vector <T, A> :: back() const
 }
 
 /***************************************
- * VECTOR :: PUSH BACK
+ * VECTOR :: PUSH BACK Alexander
  * This method will add the element 't' to the
  * end of the current buffer.  It will also grow
  * the buffer as needed to accomodate the new element
@@ -336,7 +336,7 @@ void vector <T, A> ::push_back(T && t)
 }
 
 /***************************************
- * VECTOR :: ASSIGNMENT
+ * VECTOR :: ASSIGNMENT Alexander
  * This operator will copy the contents of the
  * rhs onto *this, growing the buffer as needed
  *     INPUT  : rhs the vector to copy from
