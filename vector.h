@@ -203,8 +203,8 @@ vector <T, A> :: vector (vector && rhs)
 template <typename T, typename A>
 vector <T, A> :: ~vector()
 {
-    if (numElements > 0);
-        //delete[] data;
+    if (numElements > 0)
+        numElements = 0; // Temporary, will delte later
 }
 
 /***************************************
