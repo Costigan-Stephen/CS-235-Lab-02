@@ -313,8 +313,7 @@ const T & vector <T, A> :: operator [] (size_t index) const
 template <typename T, typename A>
 T & vector <T, A> :: front ()
 {
-    //return data[0];
-    return *(new T);
+    return data[0];
 }
 
 /******************************************
