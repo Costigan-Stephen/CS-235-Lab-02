@@ -324,9 +324,7 @@ T & vector <T, A> :: front ()
 template <typename T, typename A>
 const T & vector <T, A> :: front () const
 {
-    /*iterator it = data.begin();
-    return *it;*/
-    return *(new T);
+    return data[0];
 }
 
 /*****************************************
@@ -336,9 +334,7 @@ const T & vector <T, A> :: front () const
 template <typename T, typename A>
 T & vector <T, A> :: back()
 {
-    /*iterator it = data.end();
-    return *it;*/
-    return *(new T);
+    return data[numElements-1];
 }
 
 /******************************************
@@ -348,9 +344,7 @@ T & vector <T, A> :: back()
 template <typename T, typename A>
 const T & vector <T, A> :: back() const
 {
-    /*iterator it = data.end();
-    return *it;*/
-    return *(new T);
+    return data[numElements-1];
 }
 
 /***************************************
