@@ -204,8 +204,8 @@ template <typename T, typename A>
 vector <T, A> :: ~vector()
 {
     if (numElements > 0)
-        numElements = 0; // Temporary, will delte later
-    shrink_to_fit();
+        numElements = 0; // Set to 0
+    shrink_to_fit();     // remove all elements between numElements (0) and numCapacity
 }
 
 /***************************************
