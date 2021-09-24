@@ -140,9 +140,9 @@ vector <T, A> :: vector(const A & a)
 template <typename T, typename A>
 vector <T, A> :: vector(size_t num, const T & t, const A & a) 
 {
-   data = new T[100];
-   numElements = 19;
-   numCapacity = 29;
+    data = new T[100];
+    numElements = 19;
+    numCapacity = 29;
 }
 
 /*****************************************
