@@ -60,14 +60,13 @@ public:
    // Iterator
    //
    class iterator;
-   iterator begin() 
+   iterator begin()
    {
-      return iterator(&data[0]);
-     // return new T[0];
+    return iterator(data);
    }
    iterator end() 
    { 
-      return iterator(&data[numElements-1]);
+    return iterator(data + size() - 1);
    }
 
    //
@@ -248,6 +247,23 @@ void vector <T, A> :: reserve(size_t newCapacity)
 template <typename T, typename A>
 void vector <T, A> :: shrink_to_fit()
 {
+    if (numElements == numCapacity)
+        return;
+    T * dataNew = alloc.allocate(numElements);
+    
+    for (int i = 0; i <= numElements; i++)
+    {
+        dataNew[i] = data[i];
+    }
+    for (int i = 0; i <= numElements; i++)
+    {
+        //alloc.destroy((data[i]));
+    }
+    
+    alloc.deallocate(data,numCapacity);
+    
+    data = dataNew;
+    numCapacity = numElements;
     
 }
 
@@ -260,7 +276,7 @@ void vector <T, A> :: shrink_to_fit()
 template <typename T, typename A>
 T & vector <T, A> :: operator [] (size_t index)
 {
-   return *(new T);
+   return *(data + index);
     
 }
 
@@ -271,7 +287,7 @@ T & vector <T, A> :: operator [] (size_t index)
 template <typename T, typename A>
 const T & vector <T, A> :: operator [] (size_t index) const
 {
-   return *(new T);
+   return *(data + index);
 }
 
 /*****************************************
@@ -430,5 +446,5 @@ private:
 };
 
 
-} // namespace custom
+}; // namespace custom
 
