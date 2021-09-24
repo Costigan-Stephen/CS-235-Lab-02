@@ -203,9 +203,10 @@ vector <T, A> :: vector (vector && rhs)
 template <typename T, typename A>
 vector <T, A> :: ~vector()
 {
-    if (numElements > 0)
+    if (numElements > 0) {
         numElements = 0; // Set to 0
-    shrink_to_fit();     // remove all elements between numElements (0) and numCapacity
+        shrink_to_fit();     // remove all elements between numElements (0) and numCapacity
+    }
 }
 
 /***************************************
