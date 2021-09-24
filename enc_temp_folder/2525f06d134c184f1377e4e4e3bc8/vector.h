@@ -203,8 +203,7 @@ vector <T, A> :: vector (vector && rhs)
 template <typename T, typename A>
 vector <T, A> :: ~vector()
 {
-    if (numElements > 0);
-        //delete[] data;
+    delete[] data;
 }
 
 /***************************************
@@ -314,7 +313,8 @@ const T & vector <T, A> :: operator [] (size_t index) const
 template <typename T, typename A>
 T & vector <T, A> :: front ()
 {
-    return data[0];
+    //return data[0];
+    return *(new T);
 }
 
 /******************************************

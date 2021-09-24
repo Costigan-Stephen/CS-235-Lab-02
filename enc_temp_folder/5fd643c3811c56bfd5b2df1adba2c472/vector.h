@@ -203,8 +203,7 @@ vector <T, A> :: vector (vector && rhs)
 template <typename T, typename A>
 vector <T, A> :: ~vector()
 {
-    if (numElements > 0);
-        //delete[] data;
+    delete[] data;
 }
 
 /***************************************
@@ -249,7 +248,7 @@ void vector <T, A> :: reserve(size_t newCapacity)
 template <typename T, typename A>
 void vector <T, A> :: shrink_to_fit()
 {
-    //T * dataNew = alloc.allocate(numElements);
+    T * dataNew = alloc.allocate(numElements);
    /*
     if (numElements == numCapacity)
         return;
@@ -269,19 +268,19 @@ void vector <T, A> :: shrink_to_fit()
     data = dataNew;
     numCapacity = numElements;
     */
-    //if (numElements == numCapacity) {
-    //    return;
-    //}
-    ////dataNew = new T[numElements ];
-    //for (int i = 0; i <= numElements; i++) {
-    //    dataNew[i] = data[i];
-    //    
-    //    alloc.destroy(&data[i]);
-    //}
-    //
-    ////alloc.destroy(&data[0]);
-    //data = dataNew;
-    //numCapacity = numElements;
+    if (numElements == numCapacity) {
+        return;
+    }
+    //dataNew = new T[numElements ];
+    for (int i = 0; i <= numElements; i++) {
+        dataNew[i] = data[i];
+        
+        alloc.destroy(&data[i]);
+    }
+    
+    //alloc.destroy(&data[0]);
+    data = dataNew;
+    numCapacity = numElements;
 }
 
 
@@ -314,7 +313,8 @@ const T & vector <T, A> :: operator [] (size_t index) const
 template <typename T, typename A>
 T & vector <T, A> :: front ()
 {
-    return data[0];
+    //return data[0];
+    return *(new T);
 }
 
 /******************************************
