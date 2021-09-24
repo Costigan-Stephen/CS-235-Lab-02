@@ -62,11 +62,11 @@ public:
    class iterator;
    iterator begin()
    {
-    return iterator(data);
+        return iterator(data);
    }
    iterator end() 
    { 
-    return iterator(data + size() - 1);
+        return iterator(data + size() - 1);
    }
 
    //
@@ -203,6 +203,7 @@ vector <T, A> :: vector (vector && rhs)
 template <typename T, typename A>
 vector <T, A> :: ~vector()
 {
+    delete[] data;
 }
 
 /***************************************
@@ -257,7 +258,7 @@ void vector <T, A> :: shrink_to_fit()
     }
     for (int i = 0; i <= numElements; i++)
     {
-        //alloc.destroy((data[i]));
+        alloc.destroy(data[i]);
     }
     
     alloc.deallocate(data,numCapacity);
@@ -297,7 +298,7 @@ const T & vector <T, A> :: operator [] (size_t index) const
 template <typename T, typename A>
 T & vector <T, A> :: front ()
 {
-   return *(new T);
+    return *(new T);
 }
 
 /******************************************
@@ -307,27 +308,33 @@ T & vector <T, A> :: front ()
 template <typename T, typename A>
 const T & vector <T, A> :: front () const
 {
-   return *(new T);
+    /*iterator it = data.begin();
+    return *it;*/
+    return *(new T);
 }
 
 /*****************************************
- * VECTOR :: FRONT - Steve
+ * VECTOR :: BACK - Steve
  * Read-Write access
  ****************************************/
 template <typename T, typename A>
 T & vector <T, A> :: back()
 {
-   return *(new T);
+    /*iterator it = data.end();
+    return *it;*/
+    return *(new T);
 }
 
 /******************************************
- * VECTOR :: FRONT - Steve
+ * VECTOR :: BACK - Steve
  * Read-Write access
  *****************************************/
 template <typename T, typename A>
 const T & vector <T, A> :: back() const
 {
-   return *(new T);
+    /*iterator it = data.end();
+    return *it;*/
+    return *(new T);
 }
 
 /***************************************
