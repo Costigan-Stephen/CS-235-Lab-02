@@ -254,7 +254,7 @@ void vector <T, A> :: shrink_to_fit()
     if (numElements == numCapacity)
         return;
 
-    T* dataNew = new T[numElements];
+    T* dataNew = new T;
     for (int i = 0; i < numElements; i++) {
         dataNew[i] = data[i];
     }
