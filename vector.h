@@ -205,6 +205,7 @@ vector <T, A> :: ~vector()
 {
     if (numElements > 0)
         numElements = 0; // Temporary, will delte later
+    //data->delete();
 }
 
 /***************************************
