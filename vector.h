@@ -247,6 +247,8 @@ void vector <T, A> :: reserve(size_t newCapacity)
 template <typename T, typename A>
 void vector <T, A> :: shrink_to_fit()
 {
+    T * dataNew = alloc.allocate(numElements);
+   /*
     if (numElements == numCapacity)
         return;
     T * dataNew = alloc.allocate(numElements);
@@ -257,14 +259,27 @@ void vector <T, A> :: shrink_to_fit()
     }
     for (int i = 0; i <= numElements; i++)
     {
-        //alloc.destroy((data[i]));
+        alloc.destroy(data[i]);
     }
     
     alloc.deallocate(data,numCapacity);
-    
+    delete(data);
     data = dataNew;
     numCapacity = numElements;
+    */
+    if (numElements == numCapacity) {
+        return;
+    }
+    //dataNew = new T[numElements ];
+    for (int i = 0; i <= numElements; i++) {
+        dataNew[i] = data[i];
+        
+        alloc.destroy(&data[i]);
+    }
     
+    //alloc.destroy(&data[0]);
+    data = dataNew;
+    numCapacity = numElements;
 }
 
 
