@@ -207,7 +207,6 @@ vector <T, A> :: ~vector()
         numElements = 0; // Set to 0
         shrink_to_fit();     // remove all elements between numElements (0) and numCapacity
     }
-    //delete[] data;
 }
 
 /***************************************
@@ -344,8 +343,11 @@ void vector <T, A> :: push_back (const T & t)
 template <typename T, typename A>
 void vector <T, A> ::push_back(T && t)
 {
-    
+    if (numCapacity == numElements)
+        numCapacity *= 2;
 
+    this->push_back(t);
+    //data[numElements++] = t;
 }
 
 /***************************************
@@ -358,14 +360,22 @@ void vector <T, A> ::push_back(T && t)
 template <typename T, typename A>
 vector <T, A> & vector <T, A> :: operator = (const vector & rhs)
 {
-   
-   return *this;
+    delete[] data;
+
+    for (int i = 0; i < numElements; i++)
+        this->push_back(rhs.data[i]);
+
+    return *this;
 }
 template <typename T, typename A>
 vector <T, A>& vector <T, A> :: operator = (vector&& rhs)
 {
+    delete[] data;
 
-   return *this;
+    for (int i = 0; i < numElements; i++)
+        this->push_back(rhs.data[i]);
+
+    return *this;
 }
 
 

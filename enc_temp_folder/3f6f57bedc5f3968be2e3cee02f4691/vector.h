@@ -207,7 +207,6 @@ vector <T, A> :: ~vector()
         numElements = 0; // Set to 0
         shrink_to_fit();     // remove all elements between numElements (0) and numCapacity
     }
-    //delete[] data;
 }
 
 /***************************************
@@ -338,7 +337,10 @@ const T & vector <T, A> :: back() const
 template <typename T, typename A>
 void vector <T, A> :: push_back (const T & t)
 {
-    
+    if (numCapacity == numElements)
+        numCapacity *= 2;
+
+    data[numElements++] = t;
 }
 
 template <typename T, typename A>

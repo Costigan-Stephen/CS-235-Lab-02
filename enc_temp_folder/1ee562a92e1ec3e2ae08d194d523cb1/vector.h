@@ -178,9 +178,31 @@ vector <T, A> :: vector(size_t num, const A & a)
 template <typename T, typename A>
 vector <T, A> :: vector (const vector & rhs) 
 {
-   data = new T[100];
-   numElements = 19;
-   numCapacity = 29;
+    if (rhs.numCapacity == 0)
+    {
+        numCapacity = 0;
+        numElements = 0;
+        data = NULL;
+        return;
+    }
+
+    // attempt to allocate
+    try
+    {
+        data = new T[rhs.numCapacity];
+    }
+    catch (std::bad_alloc)
+    {
+        throw "ERROR: Unable to allocate buffer";
+    }
+
+    // copy over the capacity
+    numElements = rhs.numElements;
+    numCapacity = rhs.numCapacity;
+
+    // copy the items over one at a time using the assignment operator
+    for (int i = 0; i < numElements; i++)
+        data[i] = rhs.data[i];
 }
    
 /*****************************************
@@ -207,7 +229,6 @@ vector <T, A> :: ~vector()
         numElements = 0; // Set to 0
         shrink_to_fit();     // remove all elements between numElements (0) and numCapacity
     }
-    //delete[] data;
 }
 
 /***************************************
@@ -240,7 +261,7 @@ void vector <T, A> :: resize(size_t newElements, const T & t)
 template <typename T, typename A>
 void vector <T, A> :: reserve(size_t newCapacity)
 {
-   numCapacity = 99;
+   numCapacity = newCapacity;
 }
 
 /***************************************
@@ -338,14 +359,20 @@ const T & vector <T, A> :: back() const
 template <typename T, typename A>
 void vector <T, A> :: push_back (const T & t)
 {
-    
+    if (numCapacity == numElements)
+        numCapacity *= 2;
+
+    this->push_back(t);
 }
 
 template <typename T, typename A>
 void vector <T, A> ::push_back(T && t)
 {
-    
+    if (numCapacity == numElements)
+        numCapacity *= 2;
 
+    this->push_back(t);
+    //data[numElements++] = t;
 }
 
 /***************************************
@@ -358,14 +385,22 @@ void vector <T, A> ::push_back(T && t)
 template <typename T, typename A>
 vector <T, A> & vector <T, A> :: operator = (const vector & rhs)
 {
-   
-   return *this;
+    delete[] data;
+
+    for (int i = 0; i < numElements; i++)
+        this->push_back(rhs.data[i]);
+
+    return *this;
 }
 template <typename T, typename A>
 vector <T, A>& vector <T, A> :: operator = (vector&& rhs)
 {
+    delete[] data;
 
-   return *this;
+    for (int i = 0; i < numElements; i++)
+        this->push_back(rhs.data[i]);
+
+    return *this;
 }
 
 
